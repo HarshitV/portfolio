@@ -156,12 +156,6 @@ const Copyright = styled(Paragraph)`
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <link
-          href='https://fonts.googleapis.com/css?family=Cormorant Garamond'
-          rel='stylesheet'
-        />
-      </Head>
       <TopNav />
       <Wrapper>
         <TwoColumnCell>
@@ -188,6 +182,7 @@ const Home: NextPage = () => {
                 objectFit='cover'
                 src='/profile.jpg'
                 alt='Profile photo of Harshit Verma'
+                loading="eager"
               />
             </ImageWrapper>
           </ImageCell>
