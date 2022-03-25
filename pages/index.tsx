@@ -4,10 +4,10 @@ import Image from "next/image";
 import styled from "styled-components";
 import TopNav from "../components/Navigation/TopNav";
 import styles from "../styles/Home.module.css";
-import ProfilePhoto from "../public/profile.jpg";
-import LinkedinLogo from "../public/LinkedIn.webp";
-import FacebookLogo from "../public/Facebook.webp";
-import InstagramLogo from "../public/Instagram.webp";
+import ProfilePhoto from "../public/static/profile.jpg";
+import LinkedinLogo from "../public/static/LinkedIn.webp";
+import FacebookLogo from "../public/static/Facebook.webp";
+import InstagramLogo from "../public/static/Instagram.webp";
 
 const Wrapper = styled.div`
   display: flex;
