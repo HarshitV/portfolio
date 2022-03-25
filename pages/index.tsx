@@ -3,11 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import TopNav from "../components/Navigation/TopNav";
-import styles from "../styles/Home.module.css";
-import ProfilePhoto from "../public/static/profile.jpg";
-import LinkedinLogo from "../public/static/LinkedIn.webp";
-import FacebookLogo from "../public/static/Facebook.webp";
-import InstagramLogo from "../public/static/Instagram.webp";
 
 const Wrapper = styled.div`
   display: flex;
@@ -157,7 +152,7 @@ const Copyright = styled(Paragraph)`
   justify-content: center;
 `;
 
-const ProfileImage = styled(Image)`
+const ProfileImage = styled.img`
   width: 100%;
 `;
 
@@ -190,9 +185,8 @@ const Home: NextPage = () => {
           </TextCell>
           <ImageCell>
             <ImageWrapper>
-              <Image
-                objectFit='cover'
-                src={ProfilePhoto}
+              <ProfileImage
+                src='/profile.jpg'
                 alt='Profile photo of Harshit Verma'
               />
             </ImageWrapper>
@@ -201,22 +195,22 @@ const Home: NextPage = () => {
         <Social>
           <Logo href='https://www.linkedin.com/in/harshit-verma-b27b1810a/'>
             <Image
-              src={LinkedinLogo}
+              src='/LinkedIn.webp'
               alt='LinkedIn'
-              width={"20px"}
-              height={"20px"}
+              width="20px"
+              height="20px"
             />
           </Logo>
           <Logo href='https://www.instagram.com/harshitv29/'>
             <Image
-              src={InstagramLogo}
+              src='/Instagram.webp'
               alt='Instagram'
-              width={"20px"}
-              height={"20px"}
+              width="20px"
+              height="20px"
             />
           </Logo>
           <Logo href='https://www.facebook.com/hvhvhv2012/'>
-            <Image src={FacebookLogo} alt='Facebook' width={"20px"} />
+            <Image src='/Facebook.webp' alt='Facebook' width="20px" height="20px" />
           </Logo>
         </Social>
         <Copyright>©2022 by Harshit Verma.</Copyright>
