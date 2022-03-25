@@ -195,7 +195,7 @@ const Home: NextPage = () => {
         <Social>
           <Logo href='https://www.linkedin.com/in/harshit-verma-b27b1810a/'>
             <Image
-              src='/LinkedIn.webp'
+              src='/Linkedin.webp'
               alt='LinkedIn'
               width='20px'
               height='20px'
