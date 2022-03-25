@@ -51,7 +51,7 @@ const TopNavDesktop: NextPage = () => (
   <Wrapper>
     <A href='/'>Harshit Verma</A>
     <RightNav>
-      <Link href='/home'>Home</Link>
+      <Link href='/'>Home</Link>
       <Link href='/work'>Work</Link>
     </RightNav>
   </Wrapper>

@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   padding: 30px;
   background: white;
   justify-content: center;
+  z-index: 10;
 `;
 
 const A = styled.a`

@@ -18,17 +18,27 @@ const Wrapper = styled.div`
 
 const TwoColumnCell = styled.span`
   display: flex;
-  width: 100%;
+  flex-direction: column-reverse;
+  width: 92%;
+  max-width: 1920px;
   justify-content: center;
   align-items: center;
-  max-width: 1920px;
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    width: 100%;
+  }
 `;
 
 const ImageCell = styled.div`
-  max-width: 50%;
-  padding-left: 2%;
-  padding-right: 20%;
+  width: 100%;
+  display: flex;
+  height: 92vw;
+  max-height: 565px;
+  justify-content: center;
   @media only screen and (min-width: 768px) {
+    height: auto;
+    padding-left: 2%;
+    max-width: 50%;
     padding-right: 5%;
   }
   @media only screen and (min-width: 1440px) {
@@ -40,15 +50,21 @@ const ImageCell = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  border-right: 20px solid black;
-  width: fit-content;
+  overflow: hidden;
+  @media only screen and (min-width: 768px) {
+    border-right: 20px solid black;
+    width: fit-content;
+    overflow: auto;
+  }
 `;
 
 const TextCell = styled.div`
-  width: 50%;
-  padding-left: 20%;
-  padding-right: 2%;
+  text-align: center;
+  padding: 50px 0 0;
+  max-width: 451px;
   @media only screen and (min-width: 768px) {
+    text-align: left;
+    width: 50%;
     padding-left: 5%;
   }
   @media only screen and (min-width: 1440px) {
@@ -62,6 +78,7 @@ const TextCell = styled.div`
 const Heading = styled.h1`
   font: normal normal normal 72px/1.25em cormorantgaramond-light,
     cormorantgaramond, "cormorant garamond", serif;
+  font-size: 28px;
   @media only screen and (min-width: 768px) {
     font-size: 40px;
   }
@@ -140,6 +157,10 @@ const Copyright = styled(Paragraph)`
   justify-content: center;
 `;
 
+const ProfileImage = styled(Image)`
+  width: 100%;
+`;
+
 const Home: NextPage = () => {
   return (
     <>
@@ -169,7 +190,11 @@ const Home: NextPage = () => {
           </TextCell>
           <ImageCell>
             <ImageWrapper>
-              <Image src={ProfilePhoto} alt='Profile photo of Harshit Verma' />
+              <Image
+                objectFit='cover'
+                src={ProfilePhoto}
+                alt='Profile photo of Harshit Verma'
+              />
             </ImageWrapper>
           </ImageCell>
         </TwoColumnCell>
