@@ -46,6 +46,7 @@ const ImageCell = styled.div`
 
 const ImageWrapper = styled.div`
   overflow: hidden;
+  max-width: 565px;
   @media only screen and (min-width: 768px) {
     border-right: 20px solid black;
     width: fit-content;
@@ -152,10 +153,6 @@ const Copyright = styled(Paragraph)`
   justify-content: center;
 `;
 
-const ProfileImage = styled.img`
-  width: 100%;
-`;
-
 const Home: NextPage = () => {
   return (
     <>
@@ -185,7 +182,10 @@ const Home: NextPage = () => {
           </TextCell>
           <ImageCell>
             <ImageWrapper>
-              <ProfileImage
+              <Image
+                width={451}
+                height={564}
+                objectFit='cover'
                 src='/profile.jpg'
                 alt='Profile photo of Harshit Verma'
               />
@@ -197,20 +197,25 @@ const Home: NextPage = () => {
             <Image
               src='/LinkedIn.webp'
               alt='LinkedIn'
-              width="20px"
-              height="20px"
+              width='20px'
+              height='20px'
             />
           </Logo>
           <Logo href='https://www.instagram.com/harshitv29/'>
             <Image
               src='/Instagram.webp'
               alt='Instagram'
-              width="20px"
-              height="20px"
+              width='20px'
+              height='20px'
             />
           </Logo>
           <Logo href='https://www.facebook.com/hvhvhv2012/'>
-            <Image src='/Facebook.webp' alt='Facebook' width="20px" height="20px" />
+            <Image
+              src='/Facebook.webp'
+              alt='Facebook'
+              width='20px'
+              height='20px'
+            />
           </Logo>
         </Social>
         <Copyright>©2022 by Harshit Verma.</Copyright>
