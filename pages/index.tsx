@@ -49,7 +49,6 @@ const ImageWrapper = styled.div`
   @media only screen and (min-width: 768px) {
     border-right: 20px solid black;
     width: fit-content;
-    overflow: auto;
   }
 `;
 
@@ -61,6 +60,7 @@ const TextCell = styled.div`
     text-align: left;
     width: 50%;
     padding-left: 5%;
+    max-width: none;
   }
   @media only screen and (min-width: 1440px) {
     padding-left: 10%;
