@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styled from "styled-components";
 import TopNav from "../components/Navigation/TopNav";
+import { Button } from 'styles/layouts';
 
 const Wrapper = styled.div`
   display: flex;
@@ -114,28 +115,6 @@ const ButtonContainer = styled.div`
   padding: 25px 0;
 `;
 
-const Button = styled.a`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  padding: 10px 20px;
-  border-radius: 50px;
-  font: normal normal normal 15px/1.875em raleway, sans-serif;
-  @media only screen and (min-width: 768px) {
-    font-size: 14px;
-  }
-  @media only screen and (min-width: 1440px) {
-    font-size: 15px;
-  }
-  font-weight: 100;
-  transition: 0.3s;
-  &:hover {
-    background-color: black;
-    color: white;
-  }
-`;
-
 const Social = styled.div`
   display: flex;
   justify-content: center;
@@ -156,6 +135,9 @@ const Copyright = styled(Paragraph)`
 const Home: NextPage = () => {
   return (
     <>
+    <Head>
+      <title>Harshit Verma</title>
+    </Head>
       <TopNav />
       <Wrapper>
         <TwoColumnCell>
@@ -192,24 +174,24 @@ const Home: NextPage = () => {
             <Image
               src='/Linkedin.webp'
               alt='LinkedIn'
-              width='20px'
-              height='20px'
+              width={20}
+              height={20}
             />
           </Logo>
           <Logo href='https://www.instagram.com/harshitv29/'>
             <Image
               src='/Instagram.webp'
               alt='Instagram'
-              width='20px'
-              height='20px'
+              width={20}
+              height={20}
             />
           </Logo>
           <Logo href='https://www.facebook.com/hvhvhv2012/'>
             <Image
               src='/Facebook.webp'
               alt='Facebook'
-              width='20px'
-              height='20px'
+              width={20}
+              height={20}
             />
           </Logo>
         </Social>

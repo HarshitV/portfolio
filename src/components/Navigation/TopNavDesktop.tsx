@@ -11,9 +11,6 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
   }
-  @media only screen and (min-width: 1440px) {
-    padding: 3% 3% 3% 5%;
-  }
 `;
 
 const RightNav = styled.div`

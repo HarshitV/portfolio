@@ -1,14 +1,14 @@
-import { ReactEventHandler, useState } from "react";
-import styled, { css } from "styled-components";
+import { ReactEventHandler, useState } from 'react';
+import styled, { css } from 'styled-components';
 
 interface Props {
   onClick: ReactEventHandler;
 }
 
 const Container = styled.div`
-position: sticky;
-top: 30px;
-right: 30px;
+  position: sticky;
+  top: 30px;
+  right: 30px;
   width: 25px;
   height: 25px;
   display: flex;
@@ -24,23 +24,22 @@ const Line1 = styled.div<{ isActive: boolean }>`
   background-color: black;
   transform-origin: 1px;
   transition: all 0.3s linear;
-  transform: ${({ isActive }) => (isActive ? "rotate(45deg)" : "rotate(0)")};
+  transform: ${({ isActive }) => (isActive ? 'rotate(45deg)' : 'rotate(0)')};
 `;
 
 const Line2 = styled(Line1)`
-  transform: ${({ isActive }) => (isActive ? "rotate(45deg)" : "rotate(0)")};
-  opacity:  ${({ isActive }) => (isActive ? 0 : 1)};
+  transform: ${({ isActive }) => (isActive ? 'rotate(45deg)' : 'rotate(0)')};
+  opacity: ${({ isActive }) => (isActive ? 0 : 1)};
 `;
 
 const Line3 = styled(Line1)`
-  transform: ${({ isActive }) => (isActive ? "rotate(-45deg)" : "rotate(0)")};
+  transform: ${({ isActive }) => (isActive ? 'rotate(-45deg)' : 'rotate(0)')};
 `;
 
 const Hamburger = ({ onClick }: Props) => {
   const [isActive, setActive] = useState(false);
 
   const clickHandler = (onClick: ReactEventHandler) => {
-    // onClick();
     setActive(!isActive);
   };
 

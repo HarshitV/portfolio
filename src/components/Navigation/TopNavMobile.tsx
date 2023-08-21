@@ -11,6 +11,9 @@ const Wrapper = styled.div`
   background: white;
   justify-content: center;
   z-index: 10;
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const A = styled.a`
@@ -22,7 +25,7 @@ const A = styled.a`
   padding-left: 25px;
   line-height: 1;
   letter-spacing: normal;
-`;  
+`;
 
 const TopNavMobile: NextPage = () => (
   <Wrapper>
