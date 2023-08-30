@@ -1,3 +1,4 @@
+import { WorkTilesProps } from 'data/work';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { breakpoints } from 'styles/constants';
@@ -48,30 +49,17 @@ const Content = styled.div`
   line-height: 26px;
 `;
 
-const ContentHeading = styled.div`
+const ContentHeading = styled.h2`
   font-size: 22px;
 `;
 
 const ContentDescription = styled.div`
-  font-size: 20px;
-`;
-
-const ContentFooter = styled.div`
   font-size: 18px;
 `;
 
-interface Props {
-  image: {
-    src: string;
-    alt: string;
-  };
-  title: string;
-  description: string;
-  footer1: string;
-  footer2?: string;
-  buttonLink: string;
-  direction?: Direction;
-}
+const ContentFooter = styled.div`
+  font-size: 15px;
+`;
 
 const WorkTiles = ({
   image,
@@ -81,7 +69,8 @@ const WorkTiles = ({
   footer2,
   buttonLink,
   direction = Direction.NORMAL,
-}: Props) => {
+  loading='lazy',
+}: WorkTilesProps) => {
   return (
     <TilesContainer>
       <ImageComponent direction={direction}>
@@ -90,6 +79,7 @@ const WorkTiles = ({
           alt={image.alt}
           layout='fill'
           objectFit='cover'
+          loading={loading}
         />
       </ImageComponent>
       <Content>

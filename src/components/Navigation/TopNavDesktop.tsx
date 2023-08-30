@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: none;
   @media only screen and (min-width: 768px) {
-    padding: 5% 3% 10% 5%;
+    padding: 5% 3% 5% 5%;
     width: 100%;
     height: 40px;
     background: transparent;
