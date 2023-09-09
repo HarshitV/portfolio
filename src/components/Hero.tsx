@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ImageContainer = styled.div`
-  width: 92%;
+  width: 92vw;
   aspect-ratio: 2;
   position: relative;
   margin-bottom: 40px;
@@ -20,7 +20,7 @@ const ImageContainer = styled.div`
 const Hero = ({ image }: Props) => {
   return (
     <ImageContainer>
-      <Image src={image.src} alt={image.alt} layout='fill' objectFit='cover' />
+      <Image src={image.src} alt={image.alt} layout='fill' objectFit='cover' loading='eager' />
     </ImageContainer>
   );
 };

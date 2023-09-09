@@ -4,11 +4,17 @@ interface Props {
   text: JSX.Element | string;
   fontSize?: string;
   bold?: boolean;
+  italic?: boolean;
 }
 
-const Paragraph = styled.p<{ fontSize?: string; bold?: boolean }>`
+const Paragraph = styled.p<{
+  fontSize?: string;
+  bold?: boolean;
+  italic?: boolean;
+}>`
   font-size: ${({ fontSize }) => fontSize || '14px'};
-    ${({ bold }) => bold && 'font-weight: bold;'};
+  ${({ bold }) => bold && 'font-weight: bold;'};
+  ${({ italic }) => italic && 'font-style: italic;'};
 `;
 
 const Text = ({ text, ...rest }: Props) => {

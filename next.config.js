@@ -1,8 +1,17 @@
+const path = require('path');
+const webpack = require('webpack');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ['image/avif', 'image/webp'],
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.modules.push(path.resolve('./node_modules'));
+    }
+    return config;
   },
 };
 

@@ -4,6 +4,7 @@ const Container = styled.div`
   padding: 40px 0;
   background: rgb(247, 247, 247);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
