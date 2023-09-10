@@ -7,6 +7,7 @@ import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.css';
+import Head from 'next/head';
 
 const TextContainer = styled.section`
   position: relative;
@@ -50,7 +51,23 @@ const CarouselContainer = styled(ImageContainer)`
     display: flex;
     justify-content: center;
   }
+  img,
+  span {
+    width: 100% !important;
+    vertical-align: top;
+    border: 0;
+  }
+  .slider-wrapper {
+    img {
+      width: 940px !important;
+      height: 528px !important;
+    }
+  }
   margin-bottom: 0;
+`;
+
+const CarouselItem = styled.div`
+  height: 528px;
 `;
 
 const VideoContainer = styled(ImageContainer)`
@@ -87,11 +104,34 @@ const ContentContainer = styled.div`
 const IframeContainer = styled.div`
   width: 308px;
   height: 538px;
+  flex-shrink: 0;
+`;
+
+const TwoColumn = styled.div`
+  padding-left: calc((100% - 980px) * 0.5);
+  padding-right: calc((100% - 980px) * 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  * {
+    text-align: left !important;
+  }
+  p {
+    width: 100%;
+  }
+  ${TextContainer} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  gap: 80px;
 `;
 
 const buskaro = () => {
   return (
     <>
+    <Head>
+      <title>Harshit Verma | busKaro</title>
+    </Head>
       <TopNav />
       <Hero
         image={{
@@ -137,7 +177,7 @@ const buskaro = () => {
         <Image
           src='/buskaro/dtp.webp'
           layout='fill'
-          objectFit='cover'
+          objectFit='contain'
           alt='design thought process'
         />
       </ImageContainer>
@@ -165,7 +205,7 @@ const buskaro = () => {
             src='/buskaro/survey.webp'
             layout='fill'
             objectFit='contain'
-            alt='design thought process'
+            alt='survey'
           />
         </ImageContainer>
         <TextContainer>
@@ -354,38 +394,78 @@ const buskaro = () => {
           <Text bold fontSize='15px' text='Low Fidelity Prototype II' />
         </TextContainer>
         <CarouselContainer>
-          <Carousel showStatus={false} infiniteLoop autoPlay>
-            <div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src='/buskaro/lofi2_1.png' alt='lofi2_1' />
-            </div>
-            <div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src='/buskaro/lofi2_2.png' alt='lofi2_2' />
-            </div>
-            <div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src='/buskaro/lofi2_3.png' alt='lofi2_3' />
-            </div>
-            <div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src='/buskaro/lofi2_4.png' alt='lofi2_4' />
-            </div>
+          <Carousel showStatus={false} infiniteLoop autoPlay showThumbs={false}>
+            <CarouselItem>
+              <Image src='/buskaro/lofi2_1.png' alt='lofi2_1' layout='fill' />
+            </CarouselItem>
+            <CarouselItem>
+              <Image src='/buskaro/lofi2_2.png' alt='lofi2_2' layout='fill' />
+            </CarouselItem>
+            <CarouselItem>
+              <Image src='/buskaro/lofi2_3.png' alt='lofi2_3' layout='fill' />
+            </CarouselItem>
+            <CarouselItem>
+              <Image
+                src='/buskaro/lofi2_4.png'
+                alt='lofi2_4'
+                layout='fill'
+                objectFit='cover'
+              />
+            </CarouselItem>
           </Carousel>
         </CarouselContainer>
       </ContentContainer>
       <FullWidthContainer>
-        <IframeContainer>
-          <iframe
-            title='Embedded Content'
-            src='https://khurranasagar.github.io/buskaro/'
-            width='100%'
-            height='100%'
-            name='htmlComp-iframe'
-            data-src
+        <TextContainer>
+          <Text fontSize='22px' text='High Fidelity Prototype I' />
+          <Text text='After having done two iterations of user testing on our low fidelity prototype, we had now gathered a lot of useful feedback. We would now use the final low fidelity prototype to build a high fidelity prototype for our Android app. We used proto.io for this as well' />
+          <Text text='As can be observed from our interfaces, we have strictly followed the material design guidelines for Android to design the high fidelity prototype.' />
+          <Text
+            text={
+              <span>
+                A fully functional high fidelity prototype of our app -&gt;{' '}
+                <b><a
+                  style={{textDecoration: 'underline'}}
+                  href='https://khurranasagar.github.io/buskaro/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  Open in another tab
+                </a></b>
+              </span>
+            }
           />
-        </IframeContainer>
+        </TextContainer>
       </FullWidthContainer>
+      <ContentContainer>
+        <TextContainer>
+          <Text bold fontSize='15px' text='Testing High Fidelity Prototype I' />
+          <Text text='The high fidelity prototype was further tested with users to get their feedback on the color scheme, font, readability, and learnability of the interface.' />
+          <Text text='We then created another version of high fidelity prototype based on the feedback received from the 1st one.' />
+          <Text bold fontSize='15px' text='High Fidelity Prototype  II' />
+        </TextContainer>
+        <ImageContainer>
+          <Image
+            src='/buskaro/hifi_2.webp'
+            layout='fill'
+            objectFit='contain'
+            alt='high fidelitiy 2'
+          />
+        </ImageContainer>
+        <TextContainer>
+          <Text
+            text={
+              <span>
+                We were now ready for the final development of the app. We used{' '}
+                <b>Android Studio</b> for the same.
+              </span>
+            }
+          />
+          <Text text='After the development was complete, it was time for one final round of testing. But this time, we would use the actual app.' />
+          <Text bold fontSize='15px' text='Testing the Final App' />
+          <Text text='Most of the users felt that the app was clear in terms of both the UI and interactions. With all the positive responses, the users also provided us with areas requiring scope of improvement such as improving the search bars and functioning of automatic detection of the current stop.' />
+        </TextContainer>
+      </ContentContainer>
     </>
   );
 };

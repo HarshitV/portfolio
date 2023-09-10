@@ -17,6 +17,8 @@ export default class MyDocument extends Document {
         ...initialProps,
         styles: (
           <>
+            <link rel='preconnect' href='https://fonts.googleapis.com' />
+            <link rel='preconnect' href='https://fonts.gstatic.com' />
             <link
               href='https://fonts.googleapis.com/css?family=Cormorant Garamond&display=swap'
               rel='stylesheet'
