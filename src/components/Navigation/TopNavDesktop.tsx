@@ -1,13 +1,17 @@
 import { NextPage } from "next";
 import styled from "styled-components";
+import { breakpoints } from 'styles/constants';
 
 const Wrapper = styled.div`
   display: none;
-  @media only screen and (min-width: 768px) {
-    padding: 5% 3% 5% 5%;
+  position: fixed;
+  top: 0;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    padding: 50px 3% 50px 5%;
     width: 100%;
     height: 40px;
-    background: transparent;
+    background: white;
+    z-index: 100;
     display: flex;
     align-items: center;
   }

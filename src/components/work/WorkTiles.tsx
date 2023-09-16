@@ -24,7 +24,6 @@ const TilesContainer = styled.div`
 const ImageComponent = styled.div<{direction: Direction}>`
   position: relative;
   min-height: 400px;
-  max-height: 600px;
   aspect-ratio: 1;
   @media only screen and (min-width: ${breakpoints.tablet}) {
     width: 50%;

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import WorkTiles from 'components/work/WorkTiles';
 import workTilesData from 'data/work';
 import { breakpoints } from 'styles/constants';
+import { PageContent } from 'styles/layouts';
 
 const WorkHeading = styled.div`
   display: flex;
@@ -21,18 +22,19 @@ const WorkProjects = styled.div`
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <TopNav />
-      <WorkHeading>
-        <h1>Projects</h1>
-        <h2>Showcase of Work</h2>
-      </WorkHeading>
-      <WorkProjects>
-        {workTilesData.map((workTile, index) => {
-          return <WorkTiles key={`work-${index}`} {...workTile} />;
-        })}
-      </WorkProjects>
-    </div>
+    <>
+      <PageContent>
+        <WorkHeading>
+          <h1>Projects</h1>
+          <h2>Showcase of Work</h2>
+        </WorkHeading>
+        <WorkProjects>
+          {workTilesData.map((workTile, index) => {
+            return <WorkTiles key={`work-${index}`} {...workTile} />;
+          })}
+        </WorkProjects>
+      </PageContent>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import styled from "styled-components";
 import Hamburger from "./Hamburger";
+import { breakpoints } from 'styles/constants';
 
 const Wrapper = styled.div`
   position: sticky;
@@ -11,7 +12,7 @@ const Wrapper = styled.div`
   background: white;
   justify-content: center;
   z-index: 10;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: ${breakpoints.tablet}) {
     display: none;
   }
 `;
