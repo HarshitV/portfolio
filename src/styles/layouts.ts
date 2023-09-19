@@ -30,3 +30,13 @@ export const PageContent = styled.div`
     padding-bottom: 100px;
   }
 `;
+
+export const Image = styled.img<{
+  objectFit?: 'cover' | 'contain';
+  width?: string;
+  height?: string;
+}>`
+  width: ${({ width }) => width || '-webkit-fill-available'};
+  height: ${({ height }) => height || '-webkit-fill-available'};
+  object-fit: ${({ objectFit }) => objectFit || 'contain'};
+`;

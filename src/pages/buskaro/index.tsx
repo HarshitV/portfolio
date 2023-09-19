@@ -3,12 +3,11 @@ import Hero from 'components/Hero';
 import TopNav from 'components/Navigation/TopNav';
 import Heading from 'components/Text/Heading';
 import Text from 'components/Text/Text';
-import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.css';
 import Head from 'next/head';
-import { PageContent } from 'styles/layouts';
+import { Image, PageContent } from 'styles/layouts';
 import Footer from 'components/Footer';
 import { breakpoints } from 'styles/constants';
 import { useEffect, useState } from 'react';
@@ -93,12 +92,6 @@ const CarouselContainer = styled(ImageContainer)`
 
 const FullWidthCarouselContainer = styled.div`
   top: 0;
-  .slider-wrapper {
-    img {
-      width: auto !important;
-      height: auto !important;
-    }
-  }
   li.dot {
     background: black !important;
   }
@@ -138,11 +131,9 @@ const VideoContainer = styled(ImageContainer)`
 
 const ImageGridItem = styled.div<{ index?: number }>`
   position: relative;
-  aspect-ratio: 1.35;
   ${({ index }) =>
     index === 0 &&
     css`
-      aspect-ratio: auto;
       grid-row: span 2;
     `}
 `;
@@ -171,7 +162,7 @@ const BusKaro = () => {
         <Hero
           image={{
             src: '/buskaro/hero.webp',
-            alt: 'buskaro hero image',
+            alt: 'buskaro hero style',
           }}
         />
         <ContentContainer>
@@ -209,12 +200,7 @@ const BusKaro = () => {
           <Heading text='Design Thought Process' />
         </FullWidthContainer>
         <ImageContainer>
-          <Image
-            src='/buskaro/dtp.webp'
-            layout='fill'
-            objectFit='contain'
-            alt='design thought process'
-          />
+          <Image src='/buskaro/dtp.webp' alt='design thought process' />
         </ImageContainer>
         <ContentContainer>
           <TextContainer>
@@ -236,12 +222,7 @@ const BusKaro = () => {
             />
           </TextContainer>
           <ImageContainer aspectRatio='1.19'>
-            <Image
-              src='/buskaro/survey.webp'
-              layout='fill'
-              objectFit='contain'
-              alt='survey'
-            />
+            <Image src='/buskaro/survey.webp' alt='survey' />
           </ImageContainer>
           <TextContainer>
             <Text
@@ -280,10 +261,11 @@ const BusKaro = () => {
             ].map((imgSrc, index) => (
               <ImageGridItem key={`affinity-${index}`} index={index}>
                 <Image
-                  src={imgSrc}
-                  layout='fill'
                   objectFit='cover'
+                  src={imgSrc}
                   alt={`affinity-${index}`}
+                  width='100%'
+                  height='100%'
                 />
               </ImageGridItem>
             ))}
@@ -300,12 +282,7 @@ const BusKaro = () => {
             />
           </TextContainer>
           <ImageContainer aspectRatio='2.13'>
-            <Image
-              src='/buskaro/insights.webp'
-              layout='fill'
-              objectFit='contain'
-              alt='insights'
-            />
+            <Image src='/buskaro/insights.webp' alt='insights' />
           </ImageContainer>
         </ContentContainer>
         <FullWidthContainer>
@@ -373,12 +350,7 @@ const BusKaro = () => {
             </UnorderedList>
           </TextContainer>
           <ImageContainer aspectRatio='1.24'>
-            <Image
-              src='/buskaro/crowdsource.webp'
-              layout='fill'
-              objectFit='contain'
-              alt='crowdsource'
-            />
+            <Image src='/buskaro/crowdsource.webp' alt='crowdsource' />
           </ImageContainer>
           <TextContainer>
             <Heading text='IV. Prototype & Testing' />
@@ -406,12 +378,7 @@ const BusKaro = () => {
             <Text bold fontSize='15px' text='Low Fidelity Prototype I' />
           </TextContainer>
           <ImageContainer aspectRatio='2.14'>
-            <Image
-              src='/buskaro/lofi1.webp'
-              layout='fill'
-              objectFit='contain'
-              alt='lofi1'
-            />
+            <Image src='/buskaro/lofi1.webp' alt='lofi1' />
           </ImageContainer>
           <TextContainer>
             <Text
@@ -447,16 +414,16 @@ const BusKaro = () => {
               showArrows={false}
             >
               <CarouselItem>
-                <Image src='/buskaro/lofi2_1.png' alt='lofi2_1' layout='fill' />
+                <Image src='/buskaro/lofi2_1.png' alt='lofi2_1' />
               </CarouselItem>
               <CarouselItem>
-                <Image src='/buskaro/lofi2_2.png' alt='lofi2_2' layout='fill' />
+                <Image src='/buskaro/lofi2_2.png' alt='lofi2_2' />
               </CarouselItem>
               <CarouselItem>
-                <Image src='/buskaro/lofi2_3.png' alt='lofi2_3' layout='fill' />
+                <Image src='/buskaro/lofi2_3.png' alt='lofi2_3' />
               </CarouselItem>
               <CarouselItem>
-                <Image src='/buskaro/lofi2_4.png' alt='lofi2_4' layout='fill' />
+                <Image src='/buskaro/lofi2_4.png' alt='lofi2_4' />
               </CarouselItem>
             </Carousel>
           </CarouselContainer>
@@ -497,12 +464,7 @@ const BusKaro = () => {
             <Text bold fontSize='15px' text='High Fidelity Prototype  II' />
           </TextContainer>
           <ImageContainer aspectRatio='2.2'>
-            <Image
-              src='/buskaro/hifi_2.webp'
-              layout='fill'
-              objectFit='contain'
-              alt='high fidelitiy 2'
-            />
+            <Image src='/buskaro/hifi_2.webp' alt='high fidelitiy 2' />
           </ImageContainer>
           <TextContainer>
             <Text
@@ -564,8 +526,11 @@ const BusKaro = () => {
           <ImageContainer aspectRatio='1.6'>
             <Image
               src='/buskaro/color_scheme.webp'
-              layout='fill'
-              objectFit='contain'
+              style={{
+                width: '-webkit-fill-available',
+                height: '-webkit-fill-available',
+                objectFit: 'contain',
+              }}
               alt='color scheme'
             />
           </ImageContainer>

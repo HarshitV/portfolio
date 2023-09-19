@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import styled from 'styled-components';
 import { breakpoints } from 'styles/constants';
+import { Image } from 'styles/layouts';
 
 interface Props {
   image: {
@@ -24,7 +24,12 @@ const ImageContainer = styled.div`
 const Hero = ({ image }: Props) => {
   return (
     <ImageContainer>
-      <Image src={image.src} alt={image.alt} layout='fill' objectFit='cover' loading='eager' />
+      <Image
+        src={image.src}
+        alt={image.alt}
+        objectFit='cover'
+        loading='eager'
+      />
     </ImageContainer>
   );
 };

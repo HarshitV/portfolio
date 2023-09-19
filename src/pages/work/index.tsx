@@ -5,6 +5,7 @@ import WorkTiles from 'components/work/WorkTiles';
 import workTilesData from 'data/work';
 import { breakpoints } from 'styles/constants';
 import { PageContent } from 'styles/layouts';
+import Footer from 'components/Footer';
 
 const WorkHeading = styled.div`
   display: flex;
@@ -33,6 +34,7 @@ const Home: NextPage = () => {
             return <WorkTiles key={`work-${index}`} {...workTile} />;
           })}
         </WorkProjects>
+        <Footer />
       </PageContent>
     </>
   );

@@ -1,8 +1,7 @@
 import { WorkTilesProps } from 'data/work';
-import Image from 'next/image';
 import styled from 'styled-components';
 import { breakpoints } from 'styles/constants';
-import { Button } from 'styles/layouts';
+import { Button, Image } from 'styles/layouts';
 import { Direction } from 'utils/constants';
 
 const TilesContainer = styled.div`
@@ -12,30 +11,29 @@ const TilesContainer = styled.div`
   margin: 20px 0;
   flex-direction: column;
   @media only screen and (min-width: ${breakpoints.tablet}) {
-  height: 620px;
+    height: 620px;
     flex-direction: row;
     > * {
       flex: 0 0 auto;
     }
   }
-
 `;
 
-const ImageComponent = styled.div<{direction: Direction}>`
+const ImageComponent = styled.div<{ direction: Direction }>`
   position: relative;
   min-height: 400px;
   aspect-ratio: 1;
   @media only screen and (min-width: ${breakpoints.tablet}) {
     width: 50%;
     height: auto;
-    ${({direction}) => direction===Direction.REVERSE && 'order: 1'};
+    ${({ direction }) => direction === Direction.REVERSE && 'order: 1'};
   }
 `;
 
 const Content = styled.div`
   @media only screen and (min-width: ${breakpoints.tablet}) {
     width: 50%;
-  background: rgb(247, 247, 247);
+    background: rgb(247, 247, 247);
   }
   display: flex;
   flex-direction: column;
@@ -68,7 +66,7 @@ const WorkTiles = ({
   footer2,
   buttonLink,
   direction = Direction.NORMAL,
-  loading='lazy',
+  loading = 'lazy',
 }: WorkTilesProps) => {
   return (
     <TilesContainer>
@@ -76,7 +74,6 @@ const WorkTiles = ({
         <Image
           src={image.src}
           alt={image.alt}
-          layout='fill'
           objectFit='cover'
           loading={loading}
         />

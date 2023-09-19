@@ -3,3 +3,4 @@ export const breakpoints = {
 }
 
 export const TABLET_BREAKPOINT = 1024;
+

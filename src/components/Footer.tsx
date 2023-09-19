@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Text from './Text/Text';
-import Image from 'next/image';
+import { Image } from 'styles/layouts';
 
 const Social = styled.div`
   display: flex;
@@ -24,13 +24,18 @@ const Footer = () => (
   <>
     <Social>
       <Logo href='https://www.linkedin.com/in/harshit-verma-b27b1810a/'>
-        <Image src='/Linkedin.webp' alt='LinkedIn' width={20} height={20} />
+        <Image src='/Linkedin.webp' alt='LinkedIn' width='20px' height='20px' />
       </Logo>
       <Logo href='https://www.instagram.com/harshitv29/'>
-        <Image src='/Instagram.webp' alt='Instagram' width={20} height={20} />
+        <Image
+          src='/Instagram.webp'
+          alt='Instagram'
+          width='20px'
+          height='20px'
+        />
       </Logo>
       <Logo href='https://www.facebook.com/hvhvhv2012/'>
-        <Image src='/Facebook.webp' alt='Facebook' width={20} height={20} />
+        <Image src='/Facebook.webp' alt='Facebook' width='20px' height='20px' />
       </Logo>
     </Social>
     <CopyRight text='©2022 by Harshit Verma.' />

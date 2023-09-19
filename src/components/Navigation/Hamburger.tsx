@@ -2,7 +2,7 @@ import { ReactEventHandler, useState } from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  onClick: ReactEventHandler;
+  onClick: VoidFunction;
 }
 
 const Container = styled.div`
@@ -39,8 +39,9 @@ const Line3 = styled(Line1)`
 const Hamburger = ({ onClick }: Props) => {
   const [isActive, setActive] = useState(false);
 
-  const clickHandler = (onClick: ReactEventHandler) => {
+  const clickHandler = (onClick: VoidFunction) => {
     setActive(!isActive);
+    onClick();
   };
 
   return (

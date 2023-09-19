@@ -1,9 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import styled from 'styled-components';
 import TopNav from '../components/Navigation/TopNav';
-import { Button } from 'styles/layouts';
+import { Button, Image } from 'styles/layouts';
 import Footer from 'components/Footer';
 import { breakpoints } from 'styles/constants';
 
@@ -148,8 +147,8 @@ const Home: NextPage = () => {
           <ImageCell>
             <ImageWrapper>
               <Image
-                width={451}
-                height={564}
+                width='451px'
+                height='564px'
                 objectFit='cover'
                 src='/profile.jpg'
                 alt='Profile photo of Harshit Verma'
