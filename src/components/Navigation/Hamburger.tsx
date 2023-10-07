@@ -2,22 +2,20 @@ import { ReactEventHandler, useState } from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  onClick: VoidFunction;
+  navbarOpen: boolean;
+  setNavbarOpen: (navbarOpen: boolean) => void;
 }
 
-const Hamburger = ({ onClick }: Props) => {
-  const [isActive, setActive] = useState(false);
-
-  const clickHandler = (onClick: VoidFunction) => {
-    setActive(!isActive);
-    onClick();
+const Hamburger = ({ navbarOpen, setNavbarOpen }: Props) => {
+  const clickHandler = (setNavbarOpen: (navbarOpen: boolean) => void) => {
+    setNavbarOpen(!navbarOpen);
   };
 
   return (
-    <Container onClick={() => clickHandler(onClick)}>
-      <Line1 isActive={isActive} />
-      <Line2 isActive={isActive} />
-      <Line3 isActive={isActive} />
+    <Container onClick={() => clickHandler(setNavbarOpen)}>
+      <Line1 isActive={navbarOpen} />
+      <Line2 isActive={navbarOpen} />
+      <Line3 isActive={navbarOpen} />
     </Container>
   );
 };
@@ -34,6 +32,7 @@ const Container = styled.div`
   justify-content: space-around;
   flex-flow: column nowrap;
   z-index: 10;
+  cursor: pointer;
 `;
 
 const Line1 = styled.div<{ isActive: boolean }>`
