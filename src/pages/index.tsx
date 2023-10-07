@@ -125,7 +125,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Harshit Verma</title>
+        <title>Harshit Verma | Portfolio</title>
       </Head>
       <Wrapper>
         <TwoColumnCell>

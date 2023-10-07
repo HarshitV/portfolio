@@ -20,7 +20,7 @@ const Footer = () => (
         <Image src='/github.png' alt='Github' width='19px' height='19px' />
       </Logo>
     </Social>
-    <CopyRight text='©2022 by Harshit Verma.' />
+    <CopyRight text={`©${new Date().getFullYear()} by Harshit Verma.`} />
   </>
 );
 

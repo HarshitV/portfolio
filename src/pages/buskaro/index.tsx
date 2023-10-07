@@ -1,6 +1,6 @@
 import FullWidthContainer from 'components/FullWidthContainer';
 import Hero from 'components/Hero';
-import Heading from 'components/Text/Heading';
+import { Heading } from 'components/Text/Heading';
 import Text from 'components/Text/Text';
 import styled, { css } from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
