@@ -40,3 +40,46 @@ export const Image = styled.img<{
   height: ${({ height }) => height || '-webkit-fill-available'};
   object-fit: ${({ objectFit }) => objectFit || 'contain'};
 `;
+
+export const TextContainer = styled.section`
+  position: relative;
+  z-index: 1;
+  margin: 0 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  a {
+    text-decoration: underline;
+  }
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    text-align: center;
+    align-items: center;
+  }
+`;
+
+export const ImageContainer = styled.div<{ aspectRatio?: string }>`
+  position: relative;
+  max-width: 940px;
+  max-height: 450px;
+  aspect-ratio: ${({ aspectRatio }) => aspectRatio || '47/22'};
+  margin: 0 auto 40px;
+`;
+
+
+export const VideoContainer = styled(ImageContainer)`
+  video {
+    width: 100%;
+  }
+`;
+
+export const ContentContainer = styled.div`
+  width: 100vw;
+  padding-left: 20px;
+  padding-right: 20px;
+`;

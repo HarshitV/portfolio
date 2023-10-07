@@ -9,18 +9,6 @@ interface Props {
   };
 }
 
-const ImageContainer = styled.div`
-  width: 100vw;
-  aspect-ratio: 2;
-  position: relative;
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    width: 92vw;
-  }
-`;
-
 const Hero = ({ image }: Props) => {
   return (
     <ImageContainer>
@@ -35,3 +23,15 @@ const Hero = ({ image }: Props) => {
 };
 
 export default Hero;
+
+const ImageContainer = styled.div`
+  width: 100vw;
+  aspect-ratio: 2;
+  position: relative;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    width: 92vw;
+  }
+`;

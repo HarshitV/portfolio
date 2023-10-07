@@ -3,18 +3,6 @@ import styled from 'styled-components';
 import { breakpoints } from 'styles/constants';
 import { Image } from 'styles/layouts';
 
-const FullWidthCarouselItem = styled.div`
-  aspect-ratio: 1.26 !important;
-  width: 100% !important;
-`;
-
-const Container = styled.div`
-  display: block;
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    display: none;
-  }
-`;
-
 const CarouselContentMobile = () => (
   <Container>
     <Carousel
@@ -54,3 +42,15 @@ const CarouselContentMobile = () => (
 );
 
 export default CarouselContentMobile;
+
+const FullWidthCarouselItem = styled.div`
+  aspect-ratio: 1.26 !important;
+  width: 100% !important;
+`;
+
+const Container = styled.div`
+  display: block;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    display: none;
+  }
+`;

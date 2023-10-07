@@ -1,6 +1,18 @@
-import { NextPage } from "next";
-import styled from "styled-components";
+import { NextPage } from 'next';
+import styled from 'styled-components';
 import { breakpoints } from 'styles/constants';
+
+const TopNavDesktop: NextPage = () => (
+  <Wrapper>
+    <A href='/'>Harshit Verma</A>
+    <RightNav>
+      <Link href='/'>Home</Link>
+      <Link href='/work'>Work</Link>
+    </RightNav>
+  </Wrapper>
+);
+
+export default TopNavDesktop;
 
 const Wrapper = styled.div`
   display: none;
@@ -28,7 +40,7 @@ const RightNav = styled.div`
 const A = styled.a`
   width: 90%;
   font: normal normal normal 22px/1.41em cormorantgaramond-light,
-    cormorantgaramond, "cormorant garamond", serif;
+    cormorantgaramond, 'cormorant garamond', serif;
   font-size: 18px;
   @media only screen and (min-width: 1440px) {
     font-size: 22px;
@@ -47,15 +59,3 @@ const Link = styled.a`
   padding: 0 10px;
   font-weight: 100;
 `;
-
-const TopNavDesktop: NextPage = () => (
-  <Wrapper>
-    <A href='/'>Harshit Verma</A>
-    <RightNav>
-      <Link href='/'>Home</Link>
-      <Link href='/work'>Work</Link>
-    </RightNav>
-  </Wrapper>
-);
-
-export default TopNavDesktop;

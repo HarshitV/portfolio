@@ -4,6 +4,41 @@ import { breakpoints } from 'styles/constants';
 import { Button, Image } from 'styles/layouts';
 import { Direction } from 'utils/constants';
 
+const WorkTiles = ({
+  image,
+  title,
+  description,
+  footer1,
+  footer2,
+  buttonLink,
+  direction = Direction.NORMAL,
+  loading = 'lazy',
+}: WorkTilesProps) => {
+  return (
+    <TilesContainer>
+      <ImageComponent direction={direction}>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          objectFit='cover'
+          loading={loading}
+        />
+      </ImageComponent>
+      <Content>
+        <ContentHeading>{title}</ContentHeading>
+        <ContentDescription>{description}</ContentDescription>
+        <ContentFooter>
+          <div>{footer1}</div>
+          <div>{footer2}</div>
+        </ContentFooter>
+        <Button href={buttonLink}>View more</Button>
+      </Content>
+    </TilesContainer>
+  );
+};
+
+export default WorkTiles;
+
 const TilesContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -57,38 +92,3 @@ const ContentDescription = styled.div`
 const ContentFooter = styled.div`
   font-size: 15px;
 `;
-
-const WorkTiles = ({
-  image,
-  title,
-  description,
-  footer1,
-  footer2,
-  buttonLink,
-  direction = Direction.NORMAL,
-  loading = 'lazy',
-}: WorkTilesProps) => {
-  return (
-    <TilesContainer>
-      <ImageComponent direction={direction}>
-        <Image
-          src={image.src}
-          alt={image.alt}
-          objectFit='cover'
-          loading={loading}
-        />
-      </ImageComponent>
-      <Content>
-        <ContentHeading>{title}</ContentHeading>
-        <ContentDescription>{description}</ContentDescription>
-        <ContentFooter>
-          <div>{footer1}</div>
-          <div>{footer2}</div>
-        </ContentFooter>
-        <Button href={buttonLink}>View more</Button>
-      </Content>
-    </TilesContainer>
-  );
-};
-
-export default WorkTiles;

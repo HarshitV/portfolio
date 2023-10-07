@@ -1,156 +1,23 @@
 import FullWidthContainer from 'components/FullWidthContainer';
 import Hero from 'components/Hero';
-import TopNav from 'components/Navigation/TopNav';
 import Heading from 'components/Text/Heading';
 import Text from 'components/Text/Text';
 import styled, { css } from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.css';
 import Head from 'next/head';
-import { Image, PageContent } from 'styles/layouts';
+import {
+  ContentContainer,
+  Image,
+  ImageContainer,
+  PageContent,
+  TextContainer,
+  VideoContainer,
+} from 'styles/layouts';
 import Footer from 'components/Footer';
 import { breakpoints } from 'styles/constants';
-import { useEffect, useState } from 'react';
 import CarouselContent from 'components/buskaro/CarouselContent';
 import CarouselContentMobile from 'components/buskaro/CarouselContentMobile';
-
-const TextContainer = styled.section`
-  position: relative;
-  z-index: 1;
-  margin: 0 4%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-  a {
-    text-decoration: underline;
-  }
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    text-align: center;
-    align-items: center;
-  }
-`;
-
-const UnorderedList = styled.ul`
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    list-style-position: inside;
-  }
-  font-size: 14px;
-  padding-left: 10px;
-  width: 100%;
-`;
-
-const OrderedList = styled.ol`
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    list-style-position: inside;
-  }
-  font-size: 14px;
-  padding-left: 10px;
-  width: 100%;
-`;
-
-const ImageContainer = styled.div<{ aspectRatio?: string }>`
-  position: relative;
-  max-width: 940px;
-  max-height: 450px;
-  aspect-ratio: ${({ aspectRatio }) => aspectRatio || '47/22'};
-  margin: 0 auto 40px;
-`;
-
-const CarouselContainer = styled(ImageContainer)`
-  top: -80px;
-  li.dot {
-    background: black !important;
-  }
-  .carousel .thumbs {
-    display: flex;
-    justify-content: center;
-  }
-  img,
-  span {
-    width: 100% !important;
-    vertical-align: top;
-    border: 0;
-  }
-  .slider-wrapper {
-    img {
-      width: 100% !important;
-      aspect-ratio: 1.78 !important;
-      @media only screen and (min-width: ${breakpoints.tablet}) {
-        width: 940px !important;
-        height: 528px !important;
-      }
-    }
-  }
-  margin-bottom: 0;
-`;
-
-const FullWidthCarouselContainer = styled.div`
-  top: 0;
-  li.dot {
-    background: black !important;
-  }
-  .carousel .thumbs {
-    display: flex;
-    justify-content: center;
-  }
-  img,
-  span {
-    width: 100% !important;
-    vertical-align: top;
-    border: 0;
-  }
-`;
-
-const CarouselItem = styled.div`
-  aspect-ratio: 1.78 !important;
-  width: 100% !important;
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    height: 528px;
-  }
-`;
-
-const FullWidthCarouselItem = styled(CarouselItem)`
-  aspect-ratio: 1.26 !important;
-  width: 100% !important;
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    width: 672px;
-  }
-`;
-
-const VideoContainer = styled(ImageContainer)`
-  video {
-    width: 100%;
-  }
-`;
-
-const ImageGridItem = styled.div<{ index?: number }>`
-  position: relative;
-  ${({ index }) =>
-    index === 0 &&
-    css`
-      grid-row: span 2;
-    `}
-`;
-
-const ImageGridContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  max-width: 940px;
-  margin: 0 auto 40px;
-  gap: 10px;
-`;
-
-const ContentContainer = styled.div`
-  width: 100vw;
-  padding-left: 20px;
-  padding-right: 20px;
-`;
 
 const BusKaro = () => {
   return (
@@ -542,3 +409,91 @@ const BusKaro = () => {
 };
 
 export default BusKaro;
+
+const UnorderedList = styled.ul`
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    list-style-position: inside;
+  }
+  font-size: 14px;
+  padding-left: 10px;
+  width: 100%;
+`;
+
+const OrderedList = styled.ol`
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    list-style-position: inside;
+  }
+  font-size: 14px;
+  padding-left: 10px;
+  width: 100%;
+`;
+
+const CarouselContainer = styled(ImageContainer)`
+  top: -80px;
+  li.dot {
+    background: black !important;
+  }
+  .carousel .thumbs {
+    display: flex;
+    justify-content: center;
+  }
+  img,
+  span {
+    width: 100% !important;
+    vertical-align: top;
+    border: 0;
+  }
+  .slider-wrapper {
+    img {
+      width: 100% !important;
+      aspect-ratio: 1.78 !important;
+      @media only screen and (min-width: ${breakpoints.tablet}) {
+        width: 940px !important;
+        height: 528px !important;
+      }
+    }
+  }
+  margin-bottom: 0;
+`;
+
+const FullWidthCarouselContainer = styled.div`
+  top: 0;
+  li.dot {
+    background: black !important;
+  }
+  .carousel .thumbs {
+    display: flex;
+    justify-content: center;
+  }
+  img,
+  span {
+    width: 100% !important;
+    vertical-align: top;
+    border: 0;
+  }
+`;
+
+const CarouselItem = styled.div`
+  aspect-ratio: 1.78 !important;
+  width: 100% !important;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    height: 528px;
+  }
+`;
+
+const ImageGridItem = styled.div<{ index?: number }>`
+  position: relative;
+  ${({ index }) =>
+    index === 0 &&
+    css`
+      grid-row: span 2;
+    `}
+`;
+
+const ImageGridContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 940px;
+  margin: 0 auto 40px;
+  gap: 10px;
+`;

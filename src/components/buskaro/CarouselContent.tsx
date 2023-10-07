@@ -3,18 +3,6 @@ import styled from 'styled-components';
 import { breakpoints } from 'styles/constants';
 import { Image } from 'styles/layouts';
 
-const FullWidthCarouselItem = styled.div`
-  height: 528px;
-  width: 33vw;
-`;
-
-const Container = styled.div`
-  display: none;
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    display: block;
-  }
-`;
-
 const CarouselContent = () => (
   <Container>
     <Carousel
@@ -54,3 +42,15 @@ const CarouselContent = () => (
 );
 
 export default CarouselContent;
+
+const FullWidthCarouselItem = styled.div`
+  height: 528px;
+  width: 33vw;
+`;
+
+const Container = styled.div`
+  display: none;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    display: block;
+  }
+`;

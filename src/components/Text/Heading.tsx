@@ -4,14 +4,6 @@ interface Props {
   text: string;
 }
 
-const HeadingContainer = styled.div`
-  margin: 30px 0;
-  h1 {
-    font-size: 40px;
-  }
-
-`;
-
 const Heading = ({ text }: Props) => {
   return (
     <HeadingContainer>
@@ -21,3 +13,10 @@ const Heading = ({ text }: Props) => {
 };
 
 export default Heading;
+
+const HeadingContainer = styled.div`
+  margin: 30px 0;
+  h1 {
+    font-size: 40px;
+  }
+`;

@@ -1,7 +1,16 @@
-import { NextPage } from "next";
-import styled from "styled-components";
-import Hamburger from "./Hamburger";
+import { NextPage } from 'next';
+import styled from 'styled-components';
+import Hamburger from './Hamburger';
 import { breakpoints } from 'styles/constants';
+
+const TopNavMobile: NextPage = () => (
+  <Wrapper>
+    <A href='/'>Harshit Verma</A>
+    <Hamburger onClick={() => console.log('xx')} />
+  </Wrapper>
+);
+
+export default TopNavMobile;
 
 const Wrapper = styled.div`
   position: sticky;
@@ -21,18 +30,9 @@ const A = styled.a`
   width: 100vw;
   text-align: center;
   font: normal normal normal 22px/1.41em cormorantgaramond-light,
-    cormorantgaramond, "cormorant garamond", serif;
+    cormorantgaramond, 'cormorant garamond', serif;
   font-size: 20px;
   padding-left: 25px;
   line-height: 1;
   letter-spacing: normal;
 `;
-
-const TopNavMobile: NextPage = () => (
-  <Wrapper>
-    <A href='/'>Harshit Verma</A>
-    <Hamburger onClick={() => console.log("xx")} />
-  </Wrapper>
-);
-
-export default TopNavMobile;

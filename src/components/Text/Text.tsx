@@ -7,6 +7,12 @@ interface Props {
   italic?: boolean;
 }
 
+const Text = ({ text, ...rest }: Props) => {
+  return <Paragraph {...rest}>{text}</Paragraph>;
+};
+
+export default Text;
+
 const Paragraph = styled.p<{
   fontSize?: string;
   bold?: boolean;
@@ -16,9 +22,3 @@ const Paragraph = styled.p<{
   ${({ bold }) => bold && 'font-weight: bold;'};
   ${({ italic }) => italic && 'font-style: italic;'};
 `;
-
-const Text = ({ text, ...rest }: Props) => {
-  return <Paragraph {...rest}>{text}</Paragraph>;
-};
-
-export default Text;

@@ -5,6 +5,25 @@ interface Props {
   onClick: VoidFunction;
 }
 
+const Hamburger = ({ onClick }: Props) => {
+  const [isActive, setActive] = useState(false);
+
+  const clickHandler = (onClick: VoidFunction) => {
+    setActive(!isActive);
+    onClick();
+  };
+
+  return (
+    <Container onClick={() => clickHandler(onClick)}>
+      <Line1 isActive={isActive} />
+      <Line2 isActive={isActive} />
+      <Line3 isActive={isActive} />
+    </Container>
+  );
+};
+
+export default Hamburger;
+
 const Container = styled.div`
   position: sticky;
   top: 30px;
@@ -35,22 +54,3 @@ const Line2 = styled(Line1)`
 const Line3 = styled(Line1)`
   transform: ${({ isActive }) => (isActive ? 'rotate(-45deg)' : 'rotate(0)')};
 `;
-
-const Hamburger = ({ onClick }: Props) => {
-  const [isActive, setActive] = useState(false);
-
-  const clickHandler = (onClick: VoidFunction) => {
-    setActive(!isActive);
-    onClick();
-  };
-
-  return (
-    <Container onClick={() => clickHandler(onClick)}>
-      <Line1 isActive={isActive} />
-      <Line2 isActive={isActive} />
-      <Line3 isActive={isActive} />
-    </Container>
-  );
-};
-
-export default Hamburger;
