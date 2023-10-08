@@ -18,8 +18,8 @@ import {
 } from 'styles/layouts';
 import Footer from 'components/Footer';
 import { breakpoints } from 'styles/constants';
-import CarouselContent from 'components/buskaro/CarouselContent';
-import CarouselContentMobile from 'components/buskaro/CarouselContentMobile';
+import CarouselContent from 'components/Carousel/CarouselContent';
+import CarouselContentMobile from 'components/Carousel/CarouselContentMobile';
 
 const BusKaro = () => {
   return (

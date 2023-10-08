@@ -17,11 +17,11 @@ import Footer from 'components/Footer';
 import FullWidthContainer from 'components/FullWidthContainer';
 import styled, { css } from 'styled-components';
 import { breakpoints } from 'styles/constants';
-import CarouselContent from 'components/buskaro/CarouselContent';
-import CarouselContentMobile from 'components/buskaro/CarouselContentMobile';
+import CarouselContent from 'components/Carousel/CarouselContent';
+import CarouselContentMobile from 'components/Carousel/CarouselContentMobile';
 import 'react-responsive-carousel/lib/styles/carousel.css';
 
-const Busta = () => {
+const InstaNotes = () => {
   return (
     <>
       <Head>
@@ -179,7 +179,7 @@ const Busta = () => {
   );
 };
 
-export default Busta;
+export default InstaNotes;
 
 const Design = styled.div`
   width: 100%;

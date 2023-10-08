@@ -13,7 +13,7 @@ import {
 } from 'styles/layouts';
 import Footer from 'components/Footer';
 import FullWidthContainer from 'components/FullWidthContainer';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { breakpoints } from 'styles/constants';
 import { designProcess, salientFeatures, technology } from 'data/busta';
 
