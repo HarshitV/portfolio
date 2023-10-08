@@ -14,6 +14,7 @@ import Footer from 'components/Footer';
 import FullWidthContainer from 'components/FullWidthContainer';
 import styled, { css } from 'styled-components';
 import { breakpoints } from 'styles/constants';
+import { designProcess, salientFeatures, technology } from 'data/busta';
 
 const Busta = () => {
   return (
@@ -69,65 +70,17 @@ const Busta = () => {
               />
             </TwoColumnImageContainer>
             <UnorderedList>
-              <li>
-                <Text
-                  text={
-                    <span>
-                      <b>Multi-Currency pockets:</b> BUSta houses a pocket on
-                      the front with separate compartments for different
-                      denominations to reduce turn out time for each
-                      transaction.
-                    </span>
-                  }
-                />
-              </li>
-              <li>
-                <Text
-                  text={
-                    <span>
-                      <b>5 Buttons for printing tickets on the strap:</b> As
-                      shown in the figure, BUSta requires only 5 buttons to
-                      print tickets; other solutions require a numerical keypad
-                      with over 20 buttons.
-                    </span>
-                  }
-                />
-              </li>
-              <li>
-                <Text
-                  text={
-                    <span>
-                      <b>Printing facility in the bag:</b> BUSta gives easier
-                      access to printed tickets by placing it at the end of the
-                      bag, where printed tickets can be easily accessed with
-                      different currencies.
-                    </span>
-                  }
-                />
-              </li>
-              <li>
-                <Text
-                  text={
-                    <span>
-                      <b>Efficient Ticket Design:</b> A new ticket design not
-                      only saves paper but also removes clutter by removing
-                      unnecessary information.
-                    </span>
-                  }
-                />
-              </li>
-              <li>
-                <Text
-                  text={
-                    <span>
-                      <b>GPS based location auto-update::</b> BUSta auto-updates
-                      location through GPS and automatically uses current
-                      location to print the ticket for the required destination,
-                      and hence calculates fare too.
-                    </span>
-                  }
-                />
-              </li>
+              {salientFeatures.map((feature, index) => (
+                <li key={`feature-${index}`}>
+                  <Text
+                    text={
+                      <span>
+                        <b>{feature.title}:</b> {feature.description}
+                      </span>
+                    }
+                  />
+                </li>
+              ))}
             </UnorderedList>
           </TwoColumn>
         </FullWidthContainer>
@@ -146,48 +99,31 @@ const Busta = () => {
         </ContentContainer>
         <FullWidthContainer>
           <>
-            <TwoColumn columnLayout='1fr 2fr' reverse>
-              <TextContainer>
-                <Heading2 text='Pockets and Bag Design' />
-                <Text text='We visited different bag markets and shops like Decathlon to get inspiration for pocket design. Our first design had limited money capacity and was prone to money theft; all of which were fixed in the final iteration.' />
-              </TextContainer>
-              <TwoColumnImageContainer aspectRatio='auto'>
-                <Image
-                  src='/busta/bag_design.webp'
-                  alt='bag design'
-                  width='100%'
-                  height='100%'
-                />
-              </TwoColumnImageContainer>
-            </TwoColumn>
-            <TwoColumn columnLayout='2fr 1fr'>
-              <TextContainer>
-                <Heading2 text='Strap Position' />
-                <Text text='Our first prototype was a little loose from the side so we tried attaching straps at different positions and tested with bus conductors. The bus conductors finalised on the 3rd position as it was the most comfortable and kept the bag completely horizontal.' />
-              </TextContainer>
-              <TwoColumnImageContainer aspectRatio='auto'>
-                <Image
-                  src='/busta/strap_position.webp'
-                  alt='strap position'
-                  width='100%'
-                  height='100%'
-                />
-              </TwoColumnImageContainer>
-            </TwoColumn>
-            <TwoColumn columnLayout='1fr 2fr' reverse>
-              <TextContainer>
-                <Heading2 text='Buttons' />
-                <Text text='Bus conductors found our initial 2 cms buttons slightly small and often got confused between them. We fixed this by increasing button diameter to 2.5 cms and reinventing the button design.' />
-              </TextContainer>
-              <TwoColumnImageContainer aspectRatio='auto'>
-                <Image
-                  src='/busta/buttons.webp'
-                  alt='buttons'
-                  width='100%'
-                  height='100%'
-                />
-              </TwoColumnImageContainer>
-            </TwoColumn>
+            {designProcess.map(
+              (
+                { columnLayout, title, description, imgSrc, imgAlt, reverse },
+                index
+              ) => (
+                <TwoColumn
+                  columnLayout={columnLayout}
+                  reverse={reverse}
+                  key={`process-${index}`}
+                >
+                  <TextContainer>
+                    <Heading2 text={title} />
+                    <Text text={description} />
+                  </TextContainer>
+                  <TwoColumnImageContainer aspectRatio='auto'>
+                    <Image
+                      src={`/busta/${imgSrc}.webp`}
+                      alt={imgAlt}
+                      width='100%'
+                      height='100%'
+                    />
+                  </TwoColumnImageContainer>
+                </TwoColumn>
+              )
+            )}
           </>
         </FullWidthContainer>
         <ContentContainer>
@@ -207,48 +143,22 @@ const Busta = () => {
         </ContentContainer>
         <FullWidthContainer>
           <Technology>
-            <TechnologyItem>
-              <ImageContainer>
-                <Image
-                  src='/busta/circuit.webp'
-                  alt='circuit'
-                  width='100%'
-                  height='100%'
-                />
-              </ImageContainer>
-              <TextContainer>
-                <Heading2 text='Circuit' />
-                <Text text='The circuit running through the strap consists of 2 wires - one for power and other for buttons. The circuit remains completely hidden inside the strap.' />
-              </TextContainer>
-            </TechnologyItem>
-            <TechnologyItem>
-              <ImageContainer>
-                <Image
-                  src='/busta/arduino.webp'
-                  alt='arduino'
-                  width='100%'
-                  height='100%'
-                />
-              </ImageContainer>
-              <TextContainer>
-                <Heading2 text='Arduino, Smartphone and Powerbank' />
-                <Text text='The arduino placed inside the bag is powered by a powerbank. All the connections through the buttons happen via the arduino. A bluetooth module allows the smartphone to interact with it.' />
-              </TextContainer>
-            </TechnologyItem>
-            <TechnologyItem>
-              <ImageContainer>
-                <Image
-                  src='/busta/printer.webp'
-                  alt='printer'
-                  width='100%'
-                  height='100%'
-                />
-              </ImageContainer>
-              <TextContainer>
-                <Heading2 text='Printer' />
-                <Text text='The side of this bag houses a small thermal printer for printing tickets. The android phone will also be attached to a powerbank to ensure an extended battery.' />
-              </TextContainer>
-            </TechnologyItem>
+            {technology.map((item, index) => (
+              <TechnologyItem key={`tech-${index}`}>
+                <ImageContainer>
+                  <Image
+                    src={`/busta/${item.imgSrc}.webp`}
+                    alt={item.imgAlt}
+                    width='100%'
+                    height='100%'
+                  />
+                </ImageContainer>
+                <TextContainer>
+                  <Heading2 text={item.title} />
+                  <Text text={item.description} />
+                </TextContainer>
+              </TechnologyItem>
+            ))}
           </Technology>
         </FullWidthContainer>
         <ContentContainer>
@@ -318,7 +228,6 @@ const TechnologyItem = styled.div`
   align-items: center;
   flex: 0 0 0;
   ${ImageContainer} {
-    // width: 301px;
     height: 240px;
     aspect-ratio: 1.25;
     margin: 0;
