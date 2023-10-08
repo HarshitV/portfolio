@@ -3,10 +3,21 @@ import styled from 'styled-components';
 import Hamburger from './Hamburger';
 import { breakpoints } from 'styles/constants';
 import MenuOverlay from './MenuOverlay';
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 
 const TopNavMobile: NextPage = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = (
+    e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
+    path: string
+  ) => {
+    e.preventDefault();
+    if (window.location.pathname === path) {
+      setNavbarOpen(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else window.location.href = path;
+  };
 
   const setNavbarOpen = (navbarState: boolean) => {
     setIsOpen(navbarState);
@@ -16,11 +27,13 @@ const TopNavMobile: NextPage = () => {
     <>
       <Wrapper>
         <AnchorContainer>
-          <A href='/'>Harshit Verma</A>
+          <A href='/' onClick={(e) => handleClick(e, '/')}>
+            Harshit Verma
+          </A>
         </AnchorContainer>
         <Hamburger navbarOpen={isOpen} setNavbarOpen={setNavbarOpen} />
       </Wrapper>
-      <MenuOverlay navbarOpen={isOpen} setNavbarOpen={setNavbarOpen} />
+      <MenuOverlay navbarOpen={isOpen} handleClick={handleClick} />
     </>
   );
 };

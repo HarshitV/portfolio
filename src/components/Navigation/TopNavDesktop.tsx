@@ -1,16 +1,35 @@
 import { NextPage } from 'next';
+import { MouseEvent } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from 'styles/constants';
 
-const TopNavDesktop: NextPage = () => (
-  <Wrapper>
-    <A href='/'>Harshit Verma</A>
-    <RightNav>
-      <Link href='/'>Home</Link>
-      <Link href='/work'>Work</Link>
-    </RightNav>
-  </Wrapper>
-);
+const TopNavDesktop: NextPage = () => {
+  const handleClick = (
+    e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
+    path: string
+  ) => {
+    e.preventDefault();
+    if (window.location.pathname === path)
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    else window.location.href = path;
+  };
+
+  return (
+    <Wrapper>
+      <A href='/' onClick={(e) => handleClick(e, '/')}>
+        Harshit Verma
+      </A>
+      <RightNav>
+        <Link href='/' onClick={(e) => handleClick(e, '/')}>
+          Home
+        </Link>
+        <Link href='/work' onClick={(e) => handleClick(e, '/work')}>
+          Work
+        </Link>
+      </RightNav>
+    </Wrapper>
+  );
+};
 
 export default TopNavDesktop;
 
