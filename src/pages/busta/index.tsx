@@ -8,6 +8,7 @@ import {
   ImageContainer,
   PageContent,
   TextContainer,
+  TwoColumn,
   VideoContainer,
 } from 'styles/layouts';
 import Footer from 'components/Footer';
@@ -177,39 +178,21 @@ const Busta = () => {
 
 export default Busta;
 
-const TwoColumn = styled.div<{ columnLayout?: string; reverse?: boolean }>`
-  margin: 30px 0;
-  width: 100%;
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    display: grid;
-    grid-template-columns: ${({ columnLayout }) => columnLayout || '1fr 1fr'};
-    gap: 40px;
-    ${({ reverse }) =>
-      reverse
-        ? css`
-            ${TextContainer} {
-              order: -1;
-            }
-          `
-        : css`
-            ${TextContainer} {
-              order: 2;
-            }
-          `}
-  }
-`;
-
 const UnorderedList = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: white;
+  p {
+    text-align: left;
+  }
 `;
 
 const TwoColumnImageContainer = styled(ImageContainer)`
-  margin: 0 auto;
+  margin: 0 auto 40px;
   @media only screen and (min-width: ${breakpoints.tablet}) {
     max-height: 600px;
+    margin: 0 auto;
   }
 `;
 

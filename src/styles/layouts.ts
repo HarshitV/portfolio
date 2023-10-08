@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { breakpoints } from './constants';
 
 export const Button = styled.a`
@@ -71,7 +71,6 @@ export const ImageContainer = styled.div<{ aspectRatio?: string }>`
   margin: 0 auto 40px;
 `;
 
-
 export const VideoContainer = styled(ImageContainer)`
   video {
     width: 100%;
@@ -82,4 +81,55 @@ export const ContentContainer = styled.div`
   width: 100vw;
   padding-left: 20px;
   padding-right: 20px;
+`;
+
+export const UnorderedList = styled.ul`
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    list-style-position: inside;
+  }
+  font-size: 14px;
+  padding-left: 10px;
+  width: 100%;
+`;
+
+export const FullWidthCarouselContainer = styled.div`
+  top: 0;
+  li.dot {
+    background: black !important;
+  }
+  .carousel .thumbs {
+    display: flex;
+    justify-content: center;
+  }
+  img,
+  span {
+    width: 100% !important;
+    vertical-align: top;
+    border: 0;
+  }
+`;
+
+export const TwoColumn = styled.div<{
+  columnLayout?: string;
+  reverse?: boolean;
+}>`
+  margin: 30px 0;
+  width: 100%;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    display: grid;
+    grid-template-columns: ${({ columnLayout }) => columnLayout || '1fr 1fr'};
+    gap: 40px;
+    ${({ reverse }) =>
+      reverse
+        ? css`
+            ${TextContainer} {
+              order: -1;
+            }
+          `
+        : css`
+            ${TextContainer} {
+              order: 2;
+            }
+          `}
+  }
 `;

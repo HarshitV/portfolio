@@ -21,4 +21,5 @@ const Paragraph = styled.p<{
   font-size: ${({ fontSize }) => fontSize || '14px'};
   ${({ bold }) => bold && 'font-weight: bold;'};
   ${({ italic }) => italic && 'font-style: italic;'};
+  width: 100%;
 `;

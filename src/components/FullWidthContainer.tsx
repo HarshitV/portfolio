@@ -28,9 +28,11 @@ const Container = styled.div<{ flexOnRow: boolean; display: string }>`
   display: ${({ display }) => display && display};
   flex-direction: ${({ flexOnRow }) => (flexOnRow ? 'row' : 'column')};
   justify-content: center;
-  align-items: flex-start;
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    align-items: center;
+  align-items: center;
+  p,
+  h1,
+  h2 {
+    text-align: center;
   }
   margin-bottom: 40px;
 `;

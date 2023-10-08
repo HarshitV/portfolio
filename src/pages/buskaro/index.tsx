@@ -1,6 +1,6 @@
 import FullWidthContainer from 'components/FullWidthContainer';
 import Hero from 'components/Hero';
-import { Heading } from 'components/Text/Heading';
+import { Heading, Heading2 } from 'components/Text/Heading';
 import Text from 'components/Text/Text';
 import styled, { css } from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
@@ -8,10 +8,12 @@ import 'react-responsive-carousel/lib/styles/carousel.css';
 import Head from 'next/head';
 import {
   ContentContainer,
+  FullWidthCarouselContainer,
   Image,
   ImageContainer,
   PageContent,
   TextContainer,
+  UnorderedList,
   VideoContainer,
 } from 'styles/layouts';
 import Footer from 'components/Footer';
@@ -297,7 +299,7 @@ const BusKaro = () => {
         </ContentContainer>
         <FullWidthContainer>
           <TextContainer>
-            <Text fontSize='22px' text='High Fidelity Prototype I' />
+            <Heading2 text='High Fidelity Prototype I' />
             <Text text='After having done two iterations of user testing on our low fidelity prototype, we had now gathered a lot of useful feedback. We would now use the final low fidelity prototype to build a high fidelity prototype for our Android app. We used proto.io for this as well' />
             <Text text='As can be observed from our interfaces, we have strictly followed the material design guidelines for Android to design the high fidelity prototype.' />
             <Text
@@ -353,8 +355,8 @@ const BusKaro = () => {
               <Text bold fontSize='15px' text='Final Screens' />
             </TextContainer>
             <FullWidthCarouselContainer>
-              <CarouselContent />
-              <CarouselContentMobile />
+              <CarouselContent page='buskaro' itemCount={7} />
+              <CarouselContentMobile page='buskaro' itemCount={7} />
             </FullWidthCarouselContainer>
           </>
         </FullWidthContainer>
@@ -410,15 +412,6 @@ const BusKaro = () => {
 
 export default BusKaro;
 
-const UnorderedList = styled.ul`
-  @media only screen and (min-width: ${breakpoints.tablet}) {
-    list-style-position: inside;
-  }
-  font-size: 14px;
-  padding-left: 10px;
-  width: 100%;
-`;
-
 const OrderedList = styled.ol`
   @media only screen and (min-width: ${breakpoints.tablet}) {
     list-style-position: inside;
@@ -454,23 +447,6 @@ const CarouselContainer = styled(ImageContainer)`
     }
   }
   margin-bottom: 0;
-`;
-
-const FullWidthCarouselContainer = styled.div`
-  top: 0;
-  li.dot {
-    background: black !important;
-  }
-  .carousel .thumbs {
-    display: flex;
-    justify-content: center;
-  }
-  img,
-  span {
-    width: 100% !important;
-    vertical-align: top;
-    border: 0;
-  }
 `;
 
 const CarouselItem = styled.div`
