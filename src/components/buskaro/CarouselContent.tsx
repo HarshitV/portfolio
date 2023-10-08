@@ -36,6 +36,7 @@ const CarouselContent = ({ page, itemCount }: Props) => {
         interval={2500}
         centerMode={true}
         centerSlidePercentage={33.33}
+        stopOnHover={false}
       >
         {renderItems()}
       </Carousel>

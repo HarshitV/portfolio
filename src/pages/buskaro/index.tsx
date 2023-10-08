@@ -281,6 +281,7 @@ const BusKaro = () => {
               autoPlay
               showThumbs={false}
               showArrows={false}
+              stopOnHover={false}
             >
               <CarouselItem>
                 <Image src='/buskaro/lofi2_1.png' alt='lofi2_1' />
