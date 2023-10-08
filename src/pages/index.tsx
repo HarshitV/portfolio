@@ -147,8 +147,6 @@ const Home: NextPage = () => {
           <ImageCell>
             <ImageWrapper>
               <Image
-                width='451px'
-                height='564px'
                 objectFit='cover'
                 src='/profile.jpg'
                 alt='Profile photo of Harshit Verma'

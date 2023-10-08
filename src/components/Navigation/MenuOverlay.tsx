@@ -1,4 +1,5 @@
 import { Heading2 } from 'components/Text/Heading';
+import Text from 'components/Text/Text';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -8,12 +9,12 @@ const MenuOverlay = ({ navbarOpen, setNavbarOpen }: any) => {
       <Ul>
         <Li>
           <A href='/'>
-            <Heading2 text='Home' />
+            <Text fontSize='15px' text='Home' />
           </A>
         </Li>
         <Li>
           <A href='/work'>
-            <Heading2 text='Work' />
+            <Text fontSize='15px' text='Work' />
           </A>
         </Li>
       </Ul>
