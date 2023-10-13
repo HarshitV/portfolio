@@ -6,6 +6,7 @@ import workTilesData from 'data/work';
 import { breakpoints } from 'styles/constants';
 import { PageContent } from 'styles/layouts';
 import Footer from 'components/Footer';
+import Head from 'next/head';
 
 const WorkHeading = styled.div`
   display: flex;
@@ -24,6 +25,9 @@ const WorkProjects = styled.div`
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Harshit Verma | Work</title>
+      </Head>
       <PageContent>
         <WorkHeading>
           <h1>Projects</h1>
