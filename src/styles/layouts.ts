@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { breakpoints } from './constants';
+import styled, { css } from "styled-components";
+import { breakpoints } from "./constants";
 
 export const Button = styled.a`
   display: inline-flex;
@@ -32,13 +32,13 @@ export const PageContent = styled.div`
 `;
 
 export const Image = styled.img<{
-  objectFit?: 'cover' | 'contain';
+  objectFit?: "cover" | "contain";
   width?: string;
   height?: string;
 }>`
-  width: ${({ width }) => width || '-webkit-fill-available'};
-  height: ${({ height }) => height || '-webkit-fill-available'};
-  object-fit: ${({ objectFit }) => objectFit || 'contain'};
+  width: ${({ width }) => width || "-webkit-fill-available"};
+  height: ${({ height }) => height || "-webkit-fill-available"};
+  object-fit: ${({ objectFit }) => objectFit || "contain"};
 `;
 
 export const TextContainer = styled.section`
@@ -67,13 +67,14 @@ export const ImageContainer = styled.div<{ aspectRatio?: string }>`
   position: relative;
   max-width: 940px;
   max-height: 450px;
-  aspect-ratio: ${({ aspectRatio }) => aspectRatio || '47/22'};
+  aspect-ratio: ${({ aspectRatio }) => aspectRatio || "47/22"};
   margin: 0 auto 40px;
 `;
 
 export const VideoContainer = styled(ImageContainer)`
   video {
     width: 100%;
+    height: 100%;
   }
 `;
 
@@ -117,7 +118,7 @@ export const TwoColumn = styled.div<{
   width: 100%;
   @media only screen and (min-width: ${breakpoints.tablet}) {
     display: grid;
-    grid-template-columns: ${({ columnLayout }) => columnLayout || '1fr 1fr'};
+    grid-template-columns: ${({ columnLayout }) => columnLayout || "1fr 1fr"};
     gap: 40px;
     ${({ reverse }) =>
       reverse
