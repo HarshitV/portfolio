@@ -1,4 +1,4 @@
 export enum Direction {
-  REVERSE,
-  NORMAL,
+    REVERSE,
+    NORMAL,
 }

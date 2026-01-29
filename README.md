@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio | Harshit Verma
 
-## Getting Started
+Personal portfolio site built with Next.js and TypeScript. It showcases projects, animations, and responsive layouts using `styled-components`.
 
-First, run the development server:
+## Quick Start
+
+Prerequisites: Node.js (LTS) and npm.
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Build for production:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm run build
+npm run start
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Other useful scripts:
 
-## Learn More
+-   `npm run lint` — run ESLint across the project
+-   `npm run format` — format code with Prettier
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   `src/pages` — Next.js pages and routes. See [src/pages](src/pages)
+-   `src/components` — React components used across the site. See [src/components](src/components)
+-   `public` — static assets and images. See [public](public)
+-   `fonts` — local fonts used by the site. See [fonts](fonts)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Key files:
 
-## Deploy on Vercel
+-   Home page: [src/pages/index.tsx](src/pages/index.tsx)
+-   App wrapper: [src/pages/\_app.tsx](src/pages/_app.tsx)
+-   Global styles: [src/styles/GlobalStyles.ts](src/styles/GlobalStyles.ts)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   Styling is implemented with `styled-components`.
+-   Carousel functionality uses `react-responsive-carousel`.
+-   TypeScript is enabled across the project.
