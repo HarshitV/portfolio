@@ -1,11 +1,15 @@
+import Head from "next/head";
+import { Carousel } from "react-responsive-carousel";
+import styled, { css } from "styled-components";
+
+import CarouselContent from "components/Carousel/CarouselContent";
+import CarouselContentMobile from "components/Carousel/CarouselContentMobile";
+import Footer from "components/Footer";
 import FullWidthContainer from "components/FullWidthContainer";
 import Hero from "components/Hero";
 import { Heading, Heading2 } from "components/Text/Heading";
 import Text from "components/Text/Text";
-import styled, { css } from "styled-components";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.css";
-import Head from "next/head";
+import { breakpoints } from "styles/constants";
 import {
     ContentContainer,
     FullWidthCarouselContainer,
@@ -16,10 +20,8 @@ import {
     UnorderedList,
     VideoContainer,
 } from "styles/layouts";
-import Footer from "components/Footer";
-import { breakpoints } from "styles/constants";
-import CarouselContent from "components/Carousel/CarouselContent";
-import CarouselContentMobile from "components/Carousel/CarouselContentMobile";
+
+import "react-responsive-carousel/lib/styles/carousel.css";
 
 const BusKaro = () => {
     return (

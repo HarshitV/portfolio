@@ -1,9 +1,12 @@
+import { MouseEvent, useState } from "react";
+
 import { NextPage } from "next";
 import styled from "styled-components";
-import Hamburger from "./Hamburger";
+
 import { breakpoints } from "styles/constants";
+
+import Hamburger from "./Hamburger";
 import MenuOverlay from "./MenuOverlay";
-import { MouseEvent, useState } from "react";
 
 const TopNavMobile: NextPage = () => {
     const [isOpen, setIsOpen] = useState(false);

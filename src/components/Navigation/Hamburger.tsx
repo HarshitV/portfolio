@@ -1,13 +1,12 @@
-import { ReactEventHandler, useState } from "react";
 import styled from "styled-components";
 
 interface Props {
     navbarOpen: boolean;
-    setNavbarOpen: (navbarOpen: boolean) => void;
+    setNavbarOpen: (_navbarOpen: boolean) => void;
 }
 
 const Hamburger = ({ navbarOpen, setNavbarOpen }: Props) => {
-    const clickHandler = (setNavbarOpen: (navbarOpen: boolean) => void) => {
+    const clickHandler = (setNavbarOpen: (_navbarOpen: boolean) => void) => {
         setNavbarOpen(!navbarOpen);
     };
 

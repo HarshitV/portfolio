@@ -1,7 +1,7 @@
-import Footer from "components/Footer";
 import TopNav from "components/Navigation/TopNav";
-import type { AppProps } from "next/app";
 import GlobalStyle from "styles/GlobalStyles";
+
+import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (

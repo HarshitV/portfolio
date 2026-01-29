@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { breakpoints } from "styles/constants";
 
 interface Props {
     children: JSX.Element;

@@ -1,6 +1,7 @@
-import type { NextPage } from "next";
 import TopNavDesktop from "./TopNavDesktop";
 import TopNavMobile from "./TopNavMobile";
+
+import type { NextPage } from "next";
 
 const TopNav: NextPage = () => (
     <>

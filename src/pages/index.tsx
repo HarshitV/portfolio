@@ -1,10 +1,11 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
-import TopNav from "../components/Navigation/TopNav";
-import { Button, Image } from "styles/layouts";
+
 import Footer from "components/Footer";
 import { breakpoints } from "styles/constants";
+import { Button, Image } from "styles/layouts";
+
+import type { NextPage } from "next";
 
 const Wrapper = styled.div`
     display: flex;

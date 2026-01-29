@@ -1,5 +1,6 @@
-import { WorkTilesProps } from "data/work";
 import styled from "styled-components";
+
+import { WorkTilesProps } from "data/work";
 import { breakpoints } from "styles/constants";
 import { Button, Image } from "styles/layouts";
 import { Direction } from "utils/constants";
@@ -54,7 +55,7 @@ const TilesContainer = styled.div`
     }
 `;
 
-const ImageComponent = styled.div<{ direction: Direction }>`
+const ImageComponent = styled.div<{ direction: keyof typeof Direction }>`
     position: relative;
     min-height: 400px;
     aspect-ratio: 1;

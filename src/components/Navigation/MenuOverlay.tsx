@@ -1,13 +1,14 @@
-import { Heading2 } from "components/Text/Heading";
-import Text from "components/Text/Text";
 import React, { MouseEvent } from "react";
+
 import styled, { css } from "styled-components";
+
+import Text from "components/Text/Text";
 
 interface Props {
     navbarOpen: boolean;
     handleClick: (
-        e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
-        path: string
+        _e: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
+        _path: string
     ) => void;
 }
 
@@ -16,12 +17,12 @@ const MenuOverlay = ({ navbarOpen, handleClick }: Props) => {
         <Nav navbarOpen={navbarOpen}>
             <Ul>
                 <Li>
-                    <A href="/" onClick={(e) => handleClick(e, "/")}>
+                    <A href="/" onClick={(_e) => handleClick(_e, "/")}>
                         <Text fontSize="15px" text="Home" />
                     </A>
                 </Li>
                 <Li>
-                    <A href="/work" onClick={(e) => handleClick(e, "/work")}>
+                    <A href="/work" onClick={(_e) => handleClick(_e, "/work")}>
                         <Text fontSize="15px" text="Work" />
                     </A>
                 </Li>

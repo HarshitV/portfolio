@@ -1,7 +1,13 @@
+import Head from "next/head";
+import styled from "styled-components";
+
+import Footer from "components/Footer";
+import FullWidthContainer from "components/FullWidthContainer";
 import Hero from "components/Hero";
 import { Heading, Heading2 } from "components/Text/Heading";
 import Text from "components/Text/Text";
-import Head from "next/head";
+import { designProcess, salientFeatures, technology } from "data/busta";
+import { breakpoints } from "styles/constants";
 import {
     ContentContainer,
     Image,
@@ -11,11 +17,6 @@ import {
     TwoColumn,
     VideoContainer,
 } from "styles/layouts";
-import Footer from "components/Footer";
-import FullWidthContainer from "components/FullWidthContainer";
-import styled from "styled-components";
-import { breakpoints } from "styles/constants";
-import { designProcess, salientFeatures, technology } from "data/busta";
 
 const Busta = () => {
     return (

@@ -1,7 +1,11 @@
-import Hero from "components/Hero";
-import { Heading, Heading2 } from "components/Text/Heading";
-import Text from "components/Text/Text";
 import Head from "next/head";
+import styled from "styled-components";
+
+import Footer from "components/Footer";
+import Hero from "components/Hero";
+import { Heading } from "components/Text/Heading";
+import Text from "components/Text/Text";
+import { breakpoints } from "styles/constants";
 import {
     ContentContainer,
     Image,
@@ -10,9 +14,6 @@ import {
     TextContainer,
     VideoContainer,
 } from "styles/layouts";
-import Footer from "components/Footer";
-import styled, { css } from "styled-components";
-import { breakpoints } from "styles/constants";
 
 const Animation = () => {
     return (

@@ -1,12 +1,13 @@
-import type { NextPage } from "next";
-import TopNav from "components/Navigation/TopNav";
+import Head from "next/head";
 import styled from "styled-components";
+
+import Footer from "components/Footer";
 import WorkTiles from "components/work/WorkTiles";
 import workTilesData from "data/work";
 import { breakpoints } from "styles/constants";
 import { PageContent } from "styles/layouts";
-import Footer from "components/Footer";
-import Head from "next/head";
+
+import type { NextPage } from "next";
 
 const WorkHeading = styled.div`
     display: flex;

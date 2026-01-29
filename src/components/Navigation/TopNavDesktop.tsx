@@ -1,6 +1,8 @@
-import { NextPage } from "next";
 import { MouseEvent } from "react";
+
+import { NextPage } from "next";
 import styled from "styled-components";
+
 import { breakpoints } from "styles/constants";
 
 const TopNavDesktop: NextPage = () => {

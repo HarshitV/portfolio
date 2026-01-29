@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import Text from "./Text/Text";
+
 import { Image } from "styles/layouts";
+
+import Text from "./Text/Text";
 
 const Footer = () => (
     <>

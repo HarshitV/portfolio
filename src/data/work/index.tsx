@@ -10,7 +10,7 @@ export interface WorkTilesProps {
     footer1: string;
     footer2?: string;
     buttonLink: string;
-    direction?: Direction;
+    direction?: keyof typeof Direction;
     loading?: "lazy" | "eager";
 }
 
