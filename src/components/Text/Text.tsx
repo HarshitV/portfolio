@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface Props {
   text: JSX.Element | string;
@@ -18,8 +18,8 @@ const Paragraph = styled.p<{
   bold?: boolean;
   italic?: boolean;
 }>`
-  font-size: ${({ fontSize }) => fontSize || '14px'};
-  ${({ bold }) => bold && 'font-weight: bold;'};
-  ${({ italic }) => italic && 'font-style: italic;'};
+  font-size: ${({ fontSize }) => fontSize || "14px"};
+  ${({ bold }) => bold && "font-weight: bold;"};
+  ${({ italic }) => italic && "font-style: italic;"};
   width: 100%;
 `;
