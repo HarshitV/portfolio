@@ -1,3 +1,4 @@
+import { JSX } from "react";
 import styled from "styled-components";
 
 interface Props {
