@@ -8,6 +8,16 @@ const nextConfig = {
         locales: ["en"],
         defaultLocale: "en",
     },
+    async redirects() {
+        return [
+            {
+                source: "/:path*",
+                has: [{ type: "host", value: "vermaharshit.com" }],
+                destination: "https://www.vermaharshit.com/:path*",
+                permanent: true, // 301
+            },
+        ];
+    },
 };
 
 module.exports = nextConfig;
